@@ -40,7 +40,6 @@
 		47B0695127E7C635003C943B = {
 			isa = PBXGroup;
 			children = (
-				47DCB62D27EDDA8300FCD5AF /* .gitignore */,
 				47B0695C27E7C635003C943B /* TableReservationApp */,
 				47B0695B27E7C635003C943B /* Products */,
 			);
@@ -57,14 +56,31 @@
 		47B0695C27E7C635003C943B /* TableReservationApp */ = {
 			isa = PBXGroup;
 			children = (
-				47B0695D27E7C635003C943B /* AppDelegate.swift */,
-				47B0696127E7C635003C943B /* LoginViewController.swift */,
-				47B0697127E7C6C0003C943B /* CheckInfoViewController.swift */,
-				47B0696627E7C635003C943B /* Assets.xcassets */,
-				47B0696827E7C635003C943B /* LaunchScreen.storyboard */,
-				47B0696B27E7C635003C943B /* Info.plist */,
+				47BC96D827EDE25B00B6094B /* ViewControllers */,
+				47BC96D727EDE22200B6094B /* Others */,
 			);
 			path = TableReservationApp;
+			sourceTree = "<group>";
+		};
+		47BC96D727EDE22200B6094B /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				47B0695D27E7C635003C943B /* AppDelegate.swift */,
+				47DCB62D27EDDA8300FCD5AF /* .gitignore */,
+				47B0696B27E7C635003C943B /* Info.plist */,
+				47B0696827E7C635003C943B /* LaunchScreen.storyboard */,
+				47B0696627E7C635003C943B /* Assets.xcassets */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		47BC96D827EDE25B00B6094B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				47B0696127E7C635003C943B /* LoginViewController.swift */,
+				47B0697127E7C6C0003C943B /* CheckInfoViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +299,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7288C3T3B9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TableReservationApp/Info.plist;
+				INFOPLIST_FILE = TableReservationApp/Others/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -310,7 +326,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7288C3T3B9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TableReservationApp/Info.plist;
+				INFOPLIST_FILE = TableReservationApp/Others/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
