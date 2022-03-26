@@ -144,15 +144,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func checkLogin(sender: UIButton) {
-        if loginTextField.text == login && passwordTextField.text == password {
-            let viewController = CheckInfoViewController()
-            let navigationController = UINavigationController(rootViewController: viewController)
-            navigationController.navigationBar.prefersLargeTitles = true
-            navigationController.modalPresentationStyle = .fullScreen
-            present(navigationController, animated: true)
-        } else {
-            alert(title: "Login failed", message: "You entered the wrong username or password. Try again", style: .alert)
-        }
+        //        if loginTextField.text == login && passwordTextField.text == password {
+        let viewController = CheckInfoViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
+        //        } else {
+        //            alert(title: "Login failed", message: "You entered the wrong username or password. Try again", style: .alert)
+        //        }
     }
     
     //MARK: -AutoLayout
