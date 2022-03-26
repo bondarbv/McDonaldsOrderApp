@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4724DE5827EFCCD30078DADA /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4724DE5727EFCCD30078DADA /* OrderViewController.swift */; };
 		47B0695E27E7C635003C943B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0695D27E7C635003C943B /* AppDelegate.swift */; };
 		47B0696227E7C635003C943B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0696127E7C635003C943B /* LoginViewController.swift */; };
 		47B0696727E7C635003C943B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B0696627E7C635003C943B /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4724DE5727EFCCD30078DADA /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		47B0695A27E7C635003C943B /* McDonaldsOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = McDonaldsOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B0695D27E7C635003C943B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47B0696127E7C635003C943B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		47B0695127E7C635003C943B = {
 			isa = PBXGroup;
 			children = (
+				4724DE5727EFCCD30078DADA /* OrderViewController.swift */,
 				47B0695C27E7C635003C943B /* McDonaldsOrderApp */,
 				47B0695B27E7C635003C943B /* Products */,
 			);
@@ -157,6 +160,7 @@
 				47B0696227E7C635003C943B /* LoginViewController.swift in Sources */,
 				47B0697227E7C6C0003C943B /* CheckInfoViewController.swift in Sources */,
 				47B0695E27E7C635003C943B /* AppDelegate.swift in Sources */,
+				4724DE5827EFCCD30078DADA /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
