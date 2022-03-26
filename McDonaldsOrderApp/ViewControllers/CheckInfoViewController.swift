@@ -11,6 +11,9 @@ class CheckInfoViewController: UIViewController {
     
     let personName = "Steve"
     
+    var price = 0
+    var time = 0
+    
     //MARK: -UI
     let mainStackView: UIStackView = {
         $0.axis = .vertical
@@ -290,46 +293,55 @@ class CheckInfoViewController: UIViewController {
 
     let beefSwitch: UISwitch = {
         $0.onTintColor = .systemOrange
+        $0.addTarget(self, action: #selector(addBeef(sender:)), for: .valueChanged)
         return $0
     }(UISwitch())
     
     let chickenSwitch: UISwitch = {
         $0.onTintColor = .systemOrange
+        $0.addTarget(self, action: #selector(addChicken(sender:)), for: .valueChanged)
         return $0
     }(UISwitch())
     
     let fishSwitch: UISwitch = {
         $0.onTintColor = .systemOrange
+        $0.addTarget(self, action: #selector(addFish(sender:)), for: .valueChanged)
         return $0
     }(UISwitch())
     
     let smallPotatoSwitch: UISwitch = {
         $0.onTintColor = .systemOrange
+        $0.addTarget(self, action: #selector(addSmallPotato(sender:)), for: .valueChanged)
         return $0
     }(UISwitch())
     
     let mediumPotatoSwitch: UISwitch = {
         $0.onTintColor = .systemOrange
+        $0.addTarget(self, action: #selector(addMediumPotato(sender:)), for: .valueChanged)
         return $0
     }(UISwitch())
     
     let largePotatoSwitch: UISwitch = {
         $0.onTintColor = .systemOrange
+        $0.addTarget(self, action: #selector(addLargePotato(sender:)), for: .valueChanged)
         return $0
     }(UISwitch())
     
     let smallDrinkSwitch: UISwitch = {
         $0.onTintColor = .systemOrange
+        $0.addTarget(self, action: #selector(addSmallDrink(sender:)), for: .valueChanged)
         return $0
     }(UISwitch())
     
     let mediumDrinkSwitch: UISwitch = {
         $0.onTintColor = .systemOrange
+        $0.addTarget(self, action: #selector(addMediumDrink(sender:)), for: .valueChanged)
         return $0
     }(UISwitch())
     
     let largeDrinkSwitch: UISwitch = {
         $0.onTintColor = .systemOrange
+        $0.addTarget(self, action: #selector(addLargeDrink(sender:)), for: .valueChanged)
         return $0
     }(UISwitch())
     
@@ -409,12 +421,178 @@ class CheckInfoViewController: UIViewController {
         mainVerticalStackViewLayout()
     }
     //MARK: -Methods
+    func alert(title: String, message: String, style: UIAlertController.Style) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let creatingOrder = UIAlertAction(title: "Yes", style: .default) { _ in
+            
+        }
+        let quit = UIAlertAction(title: "No", style: .destructive)
+        alertController.addAction(creatingOrder)
+        alertController.addAction(quit)
+        self.present(alertController, animated: true)
+    }
+    
+    func emptyAlert(title: String, message: String, style: UIAlertController.Style) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
+    }
+    
     @objc private func dismissButton() {
         dismiss(animated: true)
     }
     
     @objc private func createOrder() {
-
+        if price == 0 && time == 0 {
+            emptyAlert(title: "Error", message: "The order is empty", style: .alert)
+        } else {
+            alert(title: "Your order", message: "Order amount is \(price)$. Approximate wait time: \(time) minutes", style: .alert)
+        }
+    }
+    
+    @objc private func addBeef(sender: UISwitch) {
+        if sender.isOn {
+            price += 10
+            time += 8
+            fishSwitch.isOn = false
+            fishSwitch.isEnabled = false
+            chickenSwitch.isOn = false
+            chickenSwitch.isEnabled = false
+        } else {
+            price -= 10
+            time -= 8
+            fishSwitch.isEnabled = true
+            chickenSwitch.isEnabled = true
+        }
+    }
+    
+    @objc private func addChicken(sender: UISwitch) {
+        if sender.isOn {
+            price += 6
+            time += 5
+            fishSwitch.isOn = false
+            fishSwitch.isEnabled = false
+            beefSwitch.isOn = false
+            beefSwitch.isEnabled = false
+        } else {
+            price -= 6
+            time -= 5
+            fishSwitch.isEnabled = true
+            beefSwitch.isEnabled = true
+        }
+    }
+    
+    @objc private func addFish(sender: UISwitch) {
+        if sender.isOn {
+            price += 8
+            time += 6
+            beefSwitch.isOn = false
+            beefSwitch.isEnabled = false
+            chickenSwitch.isOn = false
+            chickenSwitch.isEnabled = false
+        } else {
+            price -= 8
+            time -= 6
+            beefSwitch.isEnabled = true
+            chickenSwitch.isEnabled = true
+        }
+    }
+    
+    @objc private func addSmallPotato(sender: UISwitch) {
+        if sender.isOn {
+            price += 1
+            time += 1
+            mediumPotatoSwitch.isOn = false
+            mediumPotatoSwitch.isEnabled = false
+            largePotatoSwitch.isOn = false
+            largePotatoSwitch.isEnabled = false
+        } else {
+            price -= 1
+            time -= 1
+            mediumPotatoSwitch.isEnabled = true
+            largePotatoSwitch.isEnabled = true
+        }
+    }
+    
+    @objc private func addMediumPotato(sender: UISwitch) {
+        if sender.isOn {
+            price += 2
+            time += 1
+            smallPotatoSwitch.isOn = false
+            smallPotatoSwitch.isEnabled = false
+            largePotatoSwitch.isOn = false
+            largePotatoSwitch.isEnabled = false
+        } else {
+            price -= 2
+            time -= 1
+            smallPotatoSwitch.isEnabled = true
+            largePotatoSwitch.isEnabled = true
+        }
+    }
+    
+    @objc private func addLargePotato(sender: UISwitch) {
+        if sender.isOn {
+            price += 3
+            time += 1
+            smallPotatoSwitch.isOn = false
+            smallPotatoSwitch.isEnabled = false
+            mediumPotatoSwitch.isOn = false
+            mediumPotatoSwitch.isEnabled = false
+        } else {
+            price -= 3
+            time -= 1
+            smallPotatoSwitch.isEnabled = true
+            mediumPotatoSwitch.isEnabled = true
+        }
+    }
+    
+    @objc private func addSmallDrink(sender: UISwitch) {
+        if sender.isOn {
+            price += 1
+            time += 1
+            mediumDrinkSwitch.isOn = false
+            mediumDrinkSwitch.isEnabled = false
+            largeDrinkSwitch.isOn = false
+            largeDrinkSwitch.isEnabled = false
+        } else {
+            price -= 1
+            time -= 1
+            mediumDrinkSwitch.isEnabled = true
+            largeDrinkSwitch.isEnabled = true
+        }
+    }
+    
+    @objc private func addMediumDrink(sender: UISwitch) {
+        if sender.isOn {
+            price += 2
+            time += 1
+            smallDrinkSwitch.isOn = false
+            smallDrinkSwitch.isEnabled = false
+            largeDrinkSwitch.isOn = false
+            largeDrinkSwitch.isEnabled = false
+        } else {
+            price -= 2
+            time -= 1
+            smallDrinkSwitch.isEnabled = true
+            largeDrinkSwitch.isEnabled = true
+        }
+    }
+    
+    @objc private func addLargeDrink(sender: UISwitch) {
+        if sender.isOn {
+            price += 3
+            time += 1
+            smallDrinkSwitch.isOn = false
+            smallDrinkSwitch.isEnabled = false
+            mediumDrinkSwitch.isOn = false
+            mediumDrinkSwitch.isEnabled = false
+        } else {
+            price -= 3
+            time -= 1
+            smallDrinkSwitch.isEnabled = true
+            mediumDrinkSwitch.isEnabled = true
+        }
     }
     
     //MARK: -AutoLayout
