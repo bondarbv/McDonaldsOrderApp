@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		47B0695A27E7C635003C943B /* TableReservationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableReservationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47B0695A27E7C635003C943B /* McDonaldsOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = McDonaldsOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B0695D27E7C635003C943B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47B0696127E7C635003C943B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		47B0696627E7C635003C943B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		47B0695127E7C635003C943B = {
 			isa = PBXGroup;
 			children = (
-				47B0695C27E7C635003C943B /* TableReservationApp */,
+				47B0695C27E7C635003C943B /* McDonaldsOrderApp */,
 				47B0695B27E7C635003C943B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,18 +48,18 @@
 		47B0695B27E7C635003C943B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				47B0695A27E7C635003C943B /* TableReservationApp.app */,
+				47B0695A27E7C635003C943B /* McDonaldsOrderApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		47B0695C27E7C635003C943B /* TableReservationApp */ = {
+		47B0695C27E7C635003C943B /* McDonaldsOrderApp */ = {
 			isa = PBXGroup;
 			children = (
 				47BC96D827EDE25B00B6094B /* ViewControllers */,
 				47BC96D727EDE22200B6094B /* Others */,
 			);
-			path = TableReservationApp;
+			path = McDonaldsOrderApp;
 			sourceTree = "<group>";
 		};
 		47BC96D727EDE22200B6094B /* Others */ = {
@@ -86,9 +86,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		47B0695927E7C635003C943B /* TableReservationApp */ = {
+		47B0695927E7C635003C943B /* McDonaldsOrderApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 47B0696E27E7C635003C943B /* Build configuration list for PBXNativeTarget "TableReservationApp" */;
+			buildConfigurationList = 47B0696E27E7C635003C943B /* Build configuration list for PBXNativeTarget "McDonaldsOrderApp" */;
 			buildPhases = (
 				47B0695627E7C635003C943B /* Sources */,
 				47B0695727E7C635003C943B /* Frameworks */,
@@ -98,9 +98,9 @@
 			);
 			dependencies = (
 			);
-			name = TableReservationApp;
+			name = McDonaldsOrderApp;
 			productName = TableReservationApp;
-			productReference = 47B0695A27E7C635003C943B /* TableReservationApp.app */;
+			productReference = 47B0695A27E7C635003C943B /* McDonaldsOrderApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +118,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 47B0695527E7C635003C943B /* Build configuration list for PBXProject "TableReservationApp" */;
+			buildConfigurationList = 47B0695527E7C635003C943B /* Build configuration list for PBXProject "McDonaldsOrderApp" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -131,7 +131,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				47B0695927E7C635003C943B /* TableReservationApp */,
+				47B0695927E7C635003C943B /* McDonaldsOrderApp */,
 			);
 		};
 /* End PBXProject section */
@@ -299,9 +299,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7288C3T3B9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TableReservationApp/Others/Info.plist;
+				INFOPLIST_FILE = McDonaldsOrderApp/Others/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -326,9 +327,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7288C3T3B9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TableReservationApp/Others/Info.plist;
+				INFOPLIST_FILE = McDonaldsOrderApp/Others/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -347,7 +349,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		47B0695527E7C635003C943B /* Build configuration list for PBXProject "TableReservationApp" */ = {
+		47B0695527E7C635003C943B /* Build configuration list for PBXProject "McDonaldsOrderApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				47B0696C27E7C635003C943B /* Debug */,
@@ -356,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		47B0696E27E7C635003C943B /* Build configuration list for PBXNativeTarget "TableReservationApp" */ = {
+		47B0696E27E7C635003C943B /* Build configuration list for PBXNativeTarget "McDonaldsOrderApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				47B0696F27E7C635003C943B /* Debug */,

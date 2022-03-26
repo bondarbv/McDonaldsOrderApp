@@ -136,8 +136,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.isSecureTextEntry.toggle()
         if passwordTextField.isSecureTextEntry {
             rightButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            rightButton.tintColor = .systemOrange
         } else {
             rightButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+            rightButton.tintColor = .systemGray
         }
     }
     
