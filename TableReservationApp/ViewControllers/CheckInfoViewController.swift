@@ -12,10 +12,13 @@ class CheckInfoViewController: UIViewController {
     //MARK: -UI
     let mainStackView: UIStackView = {
         $0.axis = .vertical
-        
+        $0.distribution = .fillEqually
+        $0.alignment = .fill
+        $0.spacing = 10
+        $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UIStackView())
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Your order"
