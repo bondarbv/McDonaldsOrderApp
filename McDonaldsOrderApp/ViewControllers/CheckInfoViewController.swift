@@ -9,8 +9,12 @@ import UIKit
 
 class CheckInfoViewController: UIViewController {
     
+    //MARK: -Properties
     let personName = "Steve"
     
+    static var burger = ""
+    static var potato = ""
+    static var drink = ""
     static var price = 0
     static var time = 0
     
@@ -458,6 +462,8 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addBeef(sender: UISwitch) {
         if sender.isOn {
+            CheckInfoViewController.burger = "Beef burger"
+            OrderViewController.burgerLabel.isHidden = false
             CheckInfoViewController.price += 10
             CheckInfoViewController.time += 8
             fishSwitch.isOn = false
@@ -465,6 +471,8 @@ class CheckInfoViewController: UIViewController {
             chickenSwitch.isOn = false
             chickenSwitch.isEnabled = false
         } else {
+            CheckInfoViewController.burger = ""
+            OrderViewController.burgerLabel.isHidden = true
             CheckInfoViewController.price -= 10
             CheckInfoViewController.time -= 8
             fishSwitch.isEnabled = true
@@ -474,6 +482,8 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addChicken(sender: UISwitch) {
         if sender.isOn {
+            CheckInfoViewController.burger = "Chicken burger"
+            OrderViewController.burgerLabel.isHidden = false
             CheckInfoViewController.price += 6
             CheckInfoViewController.time += 5
             fishSwitch.isOn = false
@@ -481,6 +491,8 @@ class CheckInfoViewController: UIViewController {
             beefSwitch.isOn = false
             beefSwitch.isEnabled = false
         } else {
+            CheckInfoViewController.burger = ""
+            OrderViewController.burgerLabel.isHidden = true
             CheckInfoViewController.price -= 6
             CheckInfoViewController.time -= 5
             fishSwitch.isEnabled = true
@@ -490,6 +502,8 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addFish(sender: UISwitch) {
         if sender.isOn {
+            CheckInfoViewController.burger = "Fish burger"
+            OrderViewController.burgerLabel.isHidden = false
             CheckInfoViewController.price += 8
             CheckInfoViewController.time += 6
             beefSwitch.isOn = false
@@ -497,6 +511,8 @@ class CheckInfoViewController: UIViewController {
             chickenSwitch.isOn = false
             chickenSwitch.isEnabled = false
         } else {
+            CheckInfoViewController.burger = ""
+            OrderViewController.burgerLabel.isHidden = true
             CheckInfoViewController.price -= 8
             CheckInfoViewController.time -= 6
             beefSwitch.isEnabled = true
@@ -506,6 +522,8 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addSmallPotato(sender: UISwitch) {
         if sender.isOn {
+            CheckInfoViewController.potato = "Small potato"
+            OrderViewController.potatoLabel.isHidden = false
             CheckInfoViewController.price += 1
             CheckInfoViewController.time += 1
             mediumPotatoSwitch.isOn = false
@@ -513,6 +531,8 @@ class CheckInfoViewController: UIViewController {
             largePotatoSwitch.isOn = false
             largePotatoSwitch.isEnabled = false
         } else {
+            CheckInfoViewController.potato = ""
+            OrderViewController.potatoLabel.isHidden = true
             CheckInfoViewController.price -= 1
             CheckInfoViewController.time -= 1
             mediumPotatoSwitch.isEnabled = true
@@ -522,6 +542,8 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addMediumPotato(sender: UISwitch) {
         if sender.isOn {
+            CheckInfoViewController.potato = "Medium potato"
+            OrderViewController.potatoLabel.isHidden = false
             CheckInfoViewController.price += 2
             CheckInfoViewController.time += 1
             smallPotatoSwitch.isOn = false
@@ -529,6 +551,8 @@ class CheckInfoViewController: UIViewController {
             largePotatoSwitch.isOn = false
             largePotatoSwitch.isEnabled = false
         } else {
+            CheckInfoViewController.potato = ""
+            OrderViewController.potatoLabel.isHidden = true
             CheckInfoViewController.price -= 2
             CheckInfoViewController.time -= 1
             smallPotatoSwitch.isEnabled = true
@@ -538,6 +562,8 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addLargePotato(sender: UISwitch) {
         if sender.isOn {
+            CheckInfoViewController.potato = "Large potato"
+            OrderViewController.potatoLabel.isHidden = false
             CheckInfoViewController.price += 3
             CheckInfoViewController.time += 1
             smallPotatoSwitch.isOn = false
@@ -545,6 +571,8 @@ class CheckInfoViewController: UIViewController {
             mediumPotatoSwitch.isOn = false
             mediumPotatoSwitch.isEnabled = false
         } else {
+            CheckInfoViewController.potato = ""
+            OrderViewController.potatoLabel.isHidden = true
             CheckInfoViewController.price -= 3
             CheckInfoViewController.time -= 1
             smallPotatoSwitch.isEnabled = true
@@ -554,6 +582,8 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addSmallDrink(sender: UISwitch) {
         if sender.isOn {
+            CheckInfoViewController.drink = "Small drink"
+            OrderViewController.drinkLabel.isHidden = false
             CheckInfoViewController.price += 1
             CheckInfoViewController.time += 1
             mediumDrinkSwitch.isOn = false
@@ -561,6 +591,8 @@ class CheckInfoViewController: UIViewController {
             largeDrinkSwitch.isOn = false
             largeDrinkSwitch.isEnabled = false
         } else {
+            CheckInfoViewController.drink = ""
+            OrderViewController.drinkLabel.isHidden = true
             CheckInfoViewController.price -= 1
             CheckInfoViewController.time -= 1
             mediumDrinkSwitch.isEnabled = true
@@ -570,6 +602,8 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addMediumDrink(sender: UISwitch) {
         if sender.isOn {
+            CheckInfoViewController.drink = "Medium drink"
+            OrderViewController.drinkLabel.isHidden = false
             CheckInfoViewController.price += 2
             CheckInfoViewController.time += 1
             smallDrinkSwitch.isOn = false
@@ -577,6 +611,8 @@ class CheckInfoViewController: UIViewController {
             largeDrinkSwitch.isOn = false
             largeDrinkSwitch.isEnabled = false
         } else {
+            CheckInfoViewController.drink = ""
+            OrderViewController.drinkLabel.isHidden = true
             CheckInfoViewController.price -= 2
             CheckInfoViewController.time -= 1
             smallDrinkSwitch.isEnabled = true
@@ -586,6 +622,8 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addLargeDrink(sender: UISwitch) {
         if sender.isOn {
+            CheckInfoViewController.drink = "Large drink"
+            OrderViewController.drinkLabel.isHidden = false
             CheckInfoViewController.price += 3
             CheckInfoViewController.time += 1
             smallDrinkSwitch.isOn = false
@@ -593,6 +631,8 @@ class CheckInfoViewController: UIViewController {
             mediumDrinkSwitch.isOn = false
             mediumDrinkSwitch.isEnabled = false
         } else {
+            CheckInfoViewController.drink = ""
+            OrderViewController.drinkLabel.isHidden = true
             CheckInfoViewController.price -= 3
             CheckInfoViewController.time -= 1
             smallDrinkSwitch.isEnabled = true
