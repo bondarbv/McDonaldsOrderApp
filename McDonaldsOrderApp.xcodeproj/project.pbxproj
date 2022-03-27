@@ -42,7 +42,6 @@
 		47B0695127E7C635003C943B = {
 			isa = PBXGroup;
 			children = (
-				4724DE5727EFCCD30078DADA /* OrderViewController.swift */,
 				47B0695C27E7C635003C943B /* McDonaldsOrderApp */,
 				47B0695B27E7C635003C943B /* Products */,
 			);
@@ -80,6 +79,7 @@
 		47BC96D827EDE25B00B6094B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4724DE5727EFCCD30078DADA /* OrderViewController.swift */,
 				47B0696127E7C635003C943B /* LoginViewController.swift */,
 				47B0697127E7C6C0003C943B /* CheckInfoViewController.swift */,
 			);
