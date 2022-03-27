@@ -12,9 +12,6 @@ class CheckInfoViewController: UIViewController {
     //MARK: -Properties
     let personName = "Steve"
     
-    static var burger = ""
-    static var potato = ""
-    static var drink = ""
     static var price = 0
     static var time = 0
     
@@ -356,7 +353,7 @@ class CheckInfoViewController: UIViewController {
         title = "Hello, \(personName)"
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemOrange]
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Order", style: .done, target: self, action: #selector(createOrder))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Exit", style: .done, target: self, action: #selector(dismissButton))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Exit", style: .done, target: self, action: #selector(exitButton))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.systemRed
         navigationItem.rightBarButtonItem?.tintColor = UIColor.systemGreen
         self.view.backgroundColor = .systemGray6
@@ -425,13 +422,21 @@ class CheckInfoViewController: UIViewController {
         mainVerticalStackViewLayout()
     }
     //MARK: -Methods
+    static func clearData() {
+        CheckInfoViewController.price = 0
+        CheckInfoViewController.time = 0
+        OrderViewController.burgerLabel.text = ""
+        OrderViewController.potatoLabel.text = ""
+        OrderViewController.drinkLabel.text = ""
+    }
+    
     func alert(title: String, message: String, style: UIAlertController.Style) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let creatingOrder = UIAlertAction(title: "Yes", style: .default) { _ in
             let viewController = OrderViewController()
             let navigationController = UINavigationController(rootViewController: viewController)
             navigationController.navigationBar.prefersLargeTitles = true
-            navigationController.modalPresentationStyle = .formSheet
+            navigationController.modalPresentationStyle = .fullScreen
             self.present(navigationController, animated: true)
             
         }
@@ -442,14 +447,17 @@ class CheckInfoViewController: UIViewController {
     }
     
     func emptyAlert(title: String, message: String, style: UIAlertController.Style) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         let action = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(action)
         self.present(alertController, animated: true)
     }
     
-    @objc private func dismissButton() {
-        dismiss(animated: true)
+    @objc private func exitButton() {
+        CheckInfoViewController.clearData()
+        let viewController = LoginViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
     
     @objc private func createOrder() {
@@ -462,7 +470,7 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addBeef(sender: UISwitch) {
         if sender.isOn {
-            CheckInfoViewController.burger = "Beef burger"
+            OrderViewController.burgerLabel.text = "Beef burger"
             OrderViewController.burgerLabel.isHidden = false
             CheckInfoViewController.price += 10
             CheckInfoViewController.time += 8
@@ -471,7 +479,7 @@ class CheckInfoViewController: UIViewController {
             chickenSwitch.isOn = false
             chickenSwitch.isEnabled = false
         } else {
-            CheckInfoViewController.burger = ""
+            OrderViewController.burgerLabel.text = ""
             OrderViewController.burgerLabel.isHidden = true
             CheckInfoViewController.price -= 10
             CheckInfoViewController.time -= 8
@@ -482,7 +490,7 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addChicken(sender: UISwitch) {
         if sender.isOn {
-            CheckInfoViewController.burger = "Chicken burger"
+            OrderViewController.burgerLabel.text = "Chicken burger"
             OrderViewController.burgerLabel.isHidden = false
             CheckInfoViewController.price += 6
             CheckInfoViewController.time += 5
@@ -491,7 +499,7 @@ class CheckInfoViewController: UIViewController {
             beefSwitch.isOn = false
             beefSwitch.isEnabled = false
         } else {
-            CheckInfoViewController.burger = ""
+            OrderViewController.burgerLabel.text = ""
             OrderViewController.burgerLabel.isHidden = true
             CheckInfoViewController.price -= 6
             CheckInfoViewController.time -= 5
@@ -502,7 +510,7 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addFish(sender: UISwitch) {
         if sender.isOn {
-            CheckInfoViewController.burger = "Fish burger"
+            OrderViewController.burgerLabel.text = "Fish burger"
             OrderViewController.burgerLabel.isHidden = false
             CheckInfoViewController.price += 8
             CheckInfoViewController.time += 6
@@ -511,7 +519,7 @@ class CheckInfoViewController: UIViewController {
             chickenSwitch.isOn = false
             chickenSwitch.isEnabled = false
         } else {
-            CheckInfoViewController.burger = ""
+            OrderViewController.burgerLabel.text = ""
             OrderViewController.burgerLabel.isHidden = true
             CheckInfoViewController.price -= 8
             CheckInfoViewController.time -= 6
@@ -522,7 +530,7 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addSmallPotato(sender: UISwitch) {
         if sender.isOn {
-            CheckInfoViewController.potato = "Small potato"
+            OrderViewController.potatoLabel.text = "Small potato"
             OrderViewController.potatoLabel.isHidden = false
             CheckInfoViewController.price += 1
             CheckInfoViewController.time += 1
@@ -531,7 +539,7 @@ class CheckInfoViewController: UIViewController {
             largePotatoSwitch.isOn = false
             largePotatoSwitch.isEnabled = false
         } else {
-            CheckInfoViewController.potato = ""
+            OrderViewController.potatoLabel.text = ""
             OrderViewController.potatoLabel.isHidden = true
             CheckInfoViewController.price -= 1
             CheckInfoViewController.time -= 1
@@ -542,7 +550,7 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addMediumPotato(sender: UISwitch) {
         if sender.isOn {
-            CheckInfoViewController.potato = "Medium potato"
+            OrderViewController.potatoLabel.text = "Medium potato"
             OrderViewController.potatoLabel.isHidden = false
             CheckInfoViewController.price += 2
             CheckInfoViewController.time += 1
@@ -551,7 +559,7 @@ class CheckInfoViewController: UIViewController {
             largePotatoSwitch.isOn = false
             largePotatoSwitch.isEnabled = false
         } else {
-            CheckInfoViewController.potato = ""
+            OrderViewController.potatoLabel.text = ""
             OrderViewController.potatoLabel.isHidden = true
             CheckInfoViewController.price -= 2
             CheckInfoViewController.time -= 1
@@ -562,7 +570,7 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addLargePotato(sender: UISwitch) {
         if sender.isOn {
-            CheckInfoViewController.potato = "Large potato"
+            OrderViewController.potatoLabel.text = "Large potato"
             OrderViewController.potatoLabel.isHidden = false
             CheckInfoViewController.price += 3
             CheckInfoViewController.time += 1
@@ -571,7 +579,7 @@ class CheckInfoViewController: UIViewController {
             mediumPotatoSwitch.isOn = false
             mediumPotatoSwitch.isEnabled = false
         } else {
-            CheckInfoViewController.potato = ""
+            OrderViewController.potatoLabel.text = ""
             OrderViewController.potatoLabel.isHidden = true
             CheckInfoViewController.price -= 3
             CheckInfoViewController.time -= 1
@@ -582,7 +590,7 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addSmallDrink(sender: UISwitch) {
         if sender.isOn {
-            CheckInfoViewController.drink = "Small drink"
+            OrderViewController.drinkLabel.text = "Small drink"
             OrderViewController.drinkLabel.isHidden = false
             CheckInfoViewController.price += 1
             CheckInfoViewController.time += 1
@@ -591,7 +599,7 @@ class CheckInfoViewController: UIViewController {
             largeDrinkSwitch.isOn = false
             largeDrinkSwitch.isEnabled = false
         } else {
-            CheckInfoViewController.drink = ""
+            OrderViewController.drinkLabel.text = ""
             OrderViewController.drinkLabel.isHidden = true
             CheckInfoViewController.price -= 1
             CheckInfoViewController.time -= 1
@@ -602,7 +610,7 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addMediumDrink(sender: UISwitch) {
         if sender.isOn {
-            CheckInfoViewController.drink = "Medium drink"
+            OrderViewController.drinkLabel.text = "Medium drink"
             OrderViewController.drinkLabel.isHidden = false
             CheckInfoViewController.price += 2
             CheckInfoViewController.time += 1
@@ -611,7 +619,7 @@ class CheckInfoViewController: UIViewController {
             largeDrinkSwitch.isOn = false
             largeDrinkSwitch.isEnabled = false
         } else {
-            CheckInfoViewController.drink = ""
+            OrderViewController.drinkLabel.text = ""
             OrderViewController.drinkLabel.isHidden = true
             CheckInfoViewController.price -= 2
             CheckInfoViewController.time -= 1
@@ -622,7 +630,7 @@ class CheckInfoViewController: UIViewController {
     
     @objc private func addLargeDrink(sender: UISwitch) {
         if sender.isOn {
-            CheckInfoViewController.drink = "Large drink"
+            OrderViewController.drinkLabel.text = "Large drink"
             OrderViewController.drinkLabel.isHidden = false
             CheckInfoViewController.price += 3
             CheckInfoViewController.time += 1
@@ -631,7 +639,7 @@ class CheckInfoViewController: UIViewController {
             mediumDrinkSwitch.isOn = false
             mediumDrinkSwitch.isEnabled = false
         } else {
-            CheckInfoViewController.drink = ""
+            OrderViewController.drinkLabel.text = ""
             OrderViewController.drinkLabel.isHidden = true
             CheckInfoViewController.price -= 3
             CheckInfoViewController.time -= 1

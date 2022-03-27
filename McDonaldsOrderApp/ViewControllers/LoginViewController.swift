@@ -105,7 +105,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.loginStackView.setCustomSpacing(25, after: passwordTextField)
         self.view.backgroundColor = .systemGray6
         loginStackViewLayout()
-        loginButtonLayout()
     }
     
     //MARK: -Methods
@@ -144,15 +143,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func checkLogin(sender: UIButton) {
-        //        if loginTextField.text == login && passwordTextField.text == password {
+                if loginTextField.text == login && passwordTextField.text == password {
         let viewController = CheckInfoViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
-        //        } else {
-        //            alert(title: "Login failed", message: "You entered the wrong username or password. Try again", style: .alert)
-        //        }
+                } else {
+                    alert(title: "Login failed", message: "You entered the wrong username or password. Try again", style: .alert)
+                }
     }
     
     //MARK: -AutoLayout
@@ -160,14 +159,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         loginStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         loginStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-    }
-    
-    private func loginLabelLayout() {
-        signInLabel.bottomAnchor.constraint(equalTo: loginTextField.topAnchor, constant: -50).isActive = true
-    }
-    
-    private func loginButtonLayout() {
-        loginButton.leadingAnchor.constraint(equalTo: loginStackView.leadingAnchor, constant: 100).isActive = true
-        loginButton.trailingAnchor.constraint(equalTo: loginStackView.trailingAnchor, constant: -100).isActive = true
     }
 }
