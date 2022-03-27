@@ -101,7 +101,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.loginStackView.addArrangedSubview(passwordLabel)
         self.loginStackView.addArrangedSubview(passwordTextField)
         self.loginStackView.addArrangedSubview(loginButton)
-        self.loginStackView.setCustomSpacing(40, after: signInLabel)
+        self.loginStackView.setCustomSpacing(25, after: signInLabel)
         self.loginStackView.setCustomSpacing(25, after: passwordTextField)
         self.view.backgroundColor = .systemGray6
         loginStackViewLayout()
@@ -156,7 +156,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: -AutoLayout
     private func loginStackViewLayout() {
-        loginStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        loginStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 125).isActive = true
         loginStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         loginStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
     }
